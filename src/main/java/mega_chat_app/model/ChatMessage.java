@@ -1,7 +1,8 @@
-package udacity.exercises.MegaChatApp;
+package mega_chat_app.model;
 
 public class ChatMessage {
 
+    private int messageId;
     private String user;
     private String message;
     private String type;
@@ -10,6 +11,14 @@ public class ChatMessage {
         this.user = user;
         this.message = message;
         this.type = type;
+    }
+
+    public int getMessageId() {
+        return messageId;
+    }
+
+    public void setMessageId(int messageId) {
+        this.messageId = messageId;
     }
 
     public String getUser() {

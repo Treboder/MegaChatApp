@@ -1,4 +1,4 @@
-package udacity.exercises.MegaChatApp;
+package mega_chat_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

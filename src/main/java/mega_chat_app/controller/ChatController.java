@@ -1,13 +1,12 @@
-package udacity.exercises.MegaChatApp;
+package mega_chat_app.controller;
 
-import org.slf4j.LoggerFactory;
+import mega_chat_app.model.ChatFormBackingObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.logging.Logger;
+import mega_chat_app.service.ChatMessageService;
 
 @Controller
 public class ChatController {

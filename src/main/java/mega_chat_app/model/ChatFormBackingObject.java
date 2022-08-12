@@ -1,4 +1,4 @@
-package udacity.exercises.MegaChatApp;
+package mega_chat_app.model;
 
 public class ChatFormBackingObject {
 
