@@ -1,5 +1,4 @@
 # MegaChatApp
-Udacity Exercise (Java Web Developer) 
 
 Exercise: Spring MVC and Thymeleaf
 
