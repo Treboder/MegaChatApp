@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+</head>
+<body>
+
+<pre>
+       _____                                _________  .__               __          _____
+      /     \    ____     ____  _____       \_   ___ \ |  |__  _____   _/  |_       /  _  \  ______  ______
+     /  \ /  \ _/ __ \   / ___\ \__  \      /    \  \/ |  |  \ \__  \  \   __\     /  /_\  \ \____ \ \____ \
+    /    Y    \\  ___/  / /_/  > / __ \_    \     \____|   Y  \ / __ \_ |  |      /    |    \|  |_> >|  |_> >
+    \____|__  / \___  > \___  / (____  /     \______  /|___|  /(____  / |__|      \____|__  /|   __/ |   __/
+            \/      \/ /_____/       \/             \/      \/      \/                    \/ |__|    |__|
+</pre>
+<h3>---------------------------------------------------------------------------------------------------------------------------------</h3>
+
+<form action="#" th:object="${newChatMessage}" method="POST" th:action="@{'/chat'}">
+  <label for="username">Username:</label>
+  <input id="username" type="text" name="username" th:field="${newChatMessage.user}" >
+  <label for="messageText">Message Text:</label>
+  <input id="messageText" type="text" name="message" th:field="${newChatMessage.message}" >
+  <label for="messageType">Message Type: </label>
+  <select id="messageType" th:field="${newChatMessage.type}">
+    <option selected th:value="'say'" th:text="Say">Say </option>
+    <option th:value="'shout-mode'" th:text="Shout">Shout </option>
+    <option th:value="'whisper-mode'" th:text="Whisper">Whisper </option>
+  </select>
+  <input type="submit">
+</form>
+
+<h3>---------------------------------------------------------------------------------------------------------------------------------</h3>
+<p th:each="msg : ${chatHistory}" th:text="${msg.user} + ${': '} +${msg.message}" > --chat history-- </p>
+
+</body>
+</html>
+
