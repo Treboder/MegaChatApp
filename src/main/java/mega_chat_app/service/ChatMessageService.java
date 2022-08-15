@@ -6,6 +6,7 @@ import org.apache.logging.log4j.message.Message;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ChatMessageService {
@@ -26,8 +27,12 @@ public class ChatMessageService {
         lastID = messageMapper.saveMessage(newMessage);
     }
 
-    public ArrayList<ChatMessage> getMessageHistory() {
-        ArrayList<ChatMessage> chatHistoryObjects = new ArrayList<>();
+    public List<ChatMessage> getMessageHistoryAsBatch() {
+        return messageMapper.getAllMessages();
+    }
+
+    public List<ChatMessage> getMessageHistorySequentially() {
+        List<ChatMessage> chatHistoryObjects = new ArrayList<>();
         int count = messageMapper.getCount();
         for(int i =1; i<count+1; i++) {
             ChatMessage msg = messageMapper.getMessage(String.valueOf(i));
