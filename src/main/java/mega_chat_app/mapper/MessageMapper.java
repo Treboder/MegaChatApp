@@ -9,10 +9,13 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface MessageMapper {
-    @Select("SELECT * FROM USERS WHERE username = #{username}")
-    ChatMessage getMessage(String username);
+    @Select("SELECT count(*) FROM MESSAGES")
+    int getCount();
 
-    @Insert("INSERT INTO MESSAGES (username, messagetext) VALUES(#{user}, #{message})")
-    @Options(useGeneratedKeys = true, keyProperty = "messageId")
+    @Select("SELECT * FROM MESSAGES WHERE messageid = #{id}")
+    ChatMessage getMessage(String id);
+
+    @Insert("INSERT INTO MESSAGES (username, messagetext, messagetype) VALUES(#{user}, #{message}, #{type})")
+    @Options(useGeneratedKeys = true, keyProperty = "messageid")
     int saveMessage(ChatMessage message);
 }

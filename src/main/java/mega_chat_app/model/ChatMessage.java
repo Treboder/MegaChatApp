@@ -2,62 +2,40 @@ package mega_chat_app.model;
 
 public class ChatMessage {
 
-    private int messageId;
-    private String user;
-    private String message;
-    private String type;
+
+
+    private int messageid;
+    private String username;
+    private String messagetext;
+    private String messagetype;
 
     public ChatMessage(String user, String message, String type) {
-        this.user = user;
-        this.message = message;
-        this.type = type;
+        this.username = user;
+        this.messagetext = message;
+        this.messagetype = type;
     }
 
-    public int getMessageId() {
-        return messageId;
-    }
-
-    public void setMessageId(int messageId) {
-        this.messageId = messageId;
-    }
-
+    // called by MessageMapper when inserting/creating a new record in db (setter not required),
+    // but also called by Thymeleaf in order to feed chat.html
     public String getUser() {
-        return user;
+        return username;
     }
 
-    public void setUser(String user) {
-        this.user = user;
-    }
-
+    // called by MessageMapper when inserting/creating a new record in db (setter not required)
+    // but also called by Thymeleaf in order to feed chat.html
     public String getMessage() {
-        if(type.equals("shout-mode"))
-            return message.toUpperCase();
-        else if (type.equals("whisper-mode"))
-            return message.toLowerCase();
-        return message;
-    }
-
-    // not used/necessary, but functioning
-    public String getMessageShouted() {
-        return message.toUpperCase();
-    }
-
-    // not used/necessary, but functioning
-    public String getMessageWhispered() {
-        return message.toLowerCase();
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+        if(messagetype.equals("shout-mode"))
+            return messagetext.toUpperCase();
+        else if (messagetype.equals("whisper-mode"))
+            return messagetext.toLowerCase();
+        return messagetext;
     }
 
     public String getType() {
-        return type;
+        return messagetype;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+
 
 
 }

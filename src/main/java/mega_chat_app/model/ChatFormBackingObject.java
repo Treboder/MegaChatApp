@@ -6,6 +6,9 @@ public class ChatFormBackingObject {
     private String message;
     private String type;
 
+    // getter setter link lets the ChatController get the form input from chat.html,
+    // then passes the fields to the MessageService creating the message object
+
     public String getUser() {
         return user;
     }

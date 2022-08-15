@@ -1,19 +1,11 @@
 package mega_chat_app.config;
 
-import mega_chat_app.mapper.UserMapper;
 import mega_chat_app.service.AuthenticationService;
-import mega_chat_app.service.HashService;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
-
-import java.util.ArrayList;
 
 @Configuration
 @EnableWebSecurity
@@ -33,7 +25,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/signup", "/css/**", "/js/**").permitAll()
+                .antMatchers("/signup", "/h2-console", "/css/**", "/js/**").permitAll()
+                // access to css is required to allow loading the stylesheets !?
+                //.antMatchers("/signup", "/*.css", "/*.jpg").permitAll()
                 .anyRequest().authenticated();
 
         http.formLogin()
