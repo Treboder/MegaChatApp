@@ -19,7 +19,7 @@
 </pre>
 <h3>---------------------------------------------------------------------------------------------------------------------------------</h3>
 
-<p th:text="${'Hello '} + ${currentUser} + ${', please type your messages below: '}" ></p>
+<p id="greeting" th:text="${'Hello '} + ${currentUser} + ${', please type your messages below: '}" ></p>
 <!-- calls the object passed by ChatController as a attribute-->
 
 <form action="#" th:object="${newChatMessage}" method="POST" th:action="@{'/chat'}">
@@ -35,11 +35,11 @@
     <option th:value="'shout-mode'" th:text="Shout">Shout </option>
     <option th:value="'whisper-mode'" th:text="Whisper">Whisper </option>
   </select>
-  <input type="submit">
+  <input id="submit-button" type="submit">
 </form>
 
 <h3>---------------------------------------------------------------------------------------------------------------------------------</h3>
-<p th:each="msg : ${chatHistory}" th:text="${msg.user} + ${': '} +${msg.message}" ></p>
+<p id="messageHistory" th:each="msg : ${chatHistory}" th:text="${msg.user} + ${': '} +${msg.message}" ></p>
 <!-- calls getter/setter from object ChatMessage passed by ChatController as attribute (itself calling ChatMessageService)-->
 
 </body>
