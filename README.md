@@ -21,5 +21,14 @@ The project features:
 * Github Registry
 
 
+# Selenium vs. local browser environment
 
-
+You might observe that Selenium test results depend on your local browser settings.
+In case of failing tests, we make sure that jars are build with:
+````
+mvn -fn clean install
+````
+or
+````
+mvn clean package -Dmaven.test.skip=true
+````
