@@ -12,7 +12,7 @@ Additionally, users can select a message "mode": either Say, Shout, or Whisper.
 Say displays the message as written, while Shout displays the message in all-uppercase, and Whisper displays the message in all-lowercase.
 The application also provides simple security mechanism with a signup and login procedure, before any chat features are accessible. 
 
-READMEmd is also available via [Github Pages](https://treboder.github.io/MegaChatApp/)
+README.md is also available via [Github Pages](https://treboder.github.io/MegaChatApp/)
 
 The project features:
 * [Spring MVC / Spring Boot](https://spring.io/guides/gs/spring-boot/)
