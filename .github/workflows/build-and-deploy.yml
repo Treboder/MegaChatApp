@@ -49,7 +49,7 @@ jobs:
         with:
           host: ${{ secrets.HOST_IP }}
           username: ${{ secrets.HOST_USER }}
-          keypassword: ${{ secrets.HOST_KEY }}
+          key: ${{ secrets.HOST_KEY }}
           envs: GITHUB_SHA
           script: whoami
            
