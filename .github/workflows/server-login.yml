@@ -1,5 +1,8 @@
 name: SSH into server
 
+#https://github.com/appleboy/ssh-action#setting-up-ssh-key
+#https://github/appleboy/ssh-action/issues/80
+
 on:
   workflow_dispatch:
   push:

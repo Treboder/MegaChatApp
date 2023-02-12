@@ -1,6 +1,8 @@
 [![Build Maven Project](https://github.com/Treboder/MegaChatApp/actions/workflows/maven-build.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/maven-build.yml)
 [![Push image to Docker Hub](https://github.com/Treboder/MegaChatApp/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/docker-publish.yml)
 [![Push image to GitHub Container Registry](https://github.com/Treboder/MegaChatApp/actions/workflows/ghcr-publish.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/ghcr-publish.yml)
+[![SSH into server](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login.yml)
+[![Build and deploy to server](https://github.com/Treboder/MegaChatApp/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-and-deploy.yml)
 
 # MegaChatApp
 
