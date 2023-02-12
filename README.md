@@ -21,11 +21,3 @@ The project features:
 * [Thymeleaf](https://www.thymeleaf.org/) for html integration 
 * Web Frontend Testing with [Selenium](https://www.selenium.dev/)
 * Containerization via Docker with latest image published to [Docker Hub](https://hub.docker.com/repository/docker/treboder/megachatapp) and [Github Registry](https://github.com/Treboder/MegaChatApp/pkgs/container/megachatapp)
-
-# Selenium vs. local browser environment
-
-You might observe that Selenium test results depend on your local browser settings.
-In case of failing tests, we make sure that jars are build with:
-````
-mvn clean package -Dmaven.test.skip=true
-````
