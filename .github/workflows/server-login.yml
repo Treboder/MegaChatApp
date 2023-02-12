@@ -1,0 +1,22 @@
+name: SSH into server
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  server_login:
+    runs-on: ubuntu-latest
+    name: Log into the server
+    steps:
+
+      - name: Log in
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST_IP }}
+          username: ${{ secrets.HOST_USER }}
+          key: ${{ secrets.HOST_KEY }}
+          envs: GITHUB_SHA
+          script: whoami
+

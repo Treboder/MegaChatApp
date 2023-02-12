@@ -10,9 +10,9 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  hello_world_job:
+  push_image_to_ghcr:
     runs-on: ubuntu-latest
-    name: A job to build and push docker
+    name: A job to build and push docker image to github registry
     permissions:
       contents: read
       packages: write

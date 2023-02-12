@@ -2,13 +2,13 @@ name: Build and deploy to server
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ "master" ]
+#  push:
+#    branches: [ "master" ]
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    name: A job to build and push docker
+    name: Build and deploy to server
     steps:
       - name: Checkout code
         uses: actions/checkout@v2

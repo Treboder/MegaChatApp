@@ -6,9 +6,9 @@ on:
     branches: [ "master" ]
 
 jobs:
-  hello_world_job:
+  push_image_to_docker_hub:
     runs-on: ubuntu-latest
-    name: A job to build and push docker
+    name: A job to build and push docker image to hub
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
