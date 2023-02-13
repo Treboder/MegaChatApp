@@ -72,7 +72,7 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PWD: ${{ secrets.DOCKER_PASSWORD }}
         #run: ssh ec2 'docker login -u $DOCKER_USER -p $DOCKER_PWD'
-        run: ssh ec2 'docker login -u $DOCKER_USER -p $DOCKER_PWD'
+        run: ssh ec2 'docker login'
 
       - name: Pull image and run the container
         run: |
