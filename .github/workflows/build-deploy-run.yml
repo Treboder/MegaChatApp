@@ -3,7 +3,7 @@ name: Build, deploy and run
 on:
   workflow_dispatch:
   push:
-    branches: [ "master" ]
+    branches: [ "ft-server" ]
 
 jobs:
   build_and_push:
@@ -78,7 +78,7 @@ jobs:
         run: |
           ssh ec2 'sudo docker ps -a'
 #          ssh ec2 'sudo docker stop megachatapp'
-#          ssh ec2 'sudo docker rm megachattapp'
+          ssh ec2 'sudo docker rm megachattapp'
 
       - name: Pull image and run the container
         run: |
