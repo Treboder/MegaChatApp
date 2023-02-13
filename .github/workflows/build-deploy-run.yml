@@ -83,6 +83,6 @@ jobs:
       - name: Pull image and run the container
         run: |
           ssh ec2 'sudo docker pull treboder/megachatapp:master'
-          ssh ec2 'sudo docker run --detach --name megachatapp -p 8080:8080 treboder/megachatapp:master'
+          ssh ec2 'sudo docker run --detach --name mega -p 8080:8080 treboder/megachatapp:master'
           ssh ec2 'curl localhost:8080'
 
