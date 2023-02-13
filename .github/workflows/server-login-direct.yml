@@ -1,4 +1,4 @@
-name: ssh-into-aws-ec2
+name: SSH into server directly
 
 on:
   workflow_dispatch:
@@ -14,12 +14,12 @@ permissions:
   id-token: write
 
 jobs:
-  test:
+  server_login:
     runs-on: ubuntu-latest
-
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v3
+
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
@@ -36,5 +36,6 @@ jobs:
           SSH_HOST: ${{ secrets.HOST_IP }}
           SSH_USER: ${{ secrets.HOST_USER }}
           SSH_KEY: ${{ secrets.HOST_KEY }}
+
       - name: List home directory
         run: ssh ec2 'ls -la'

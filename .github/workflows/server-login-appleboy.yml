@@ -1,4 +1,4 @@
-name: SSH into server
+name: SSH into server via appleboy
 
 #https://github.com/appleboy/ssh-action#setting-up-ssh-key
 #https://github/appleboy/ssh-action/issues/80
@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Log into the server
     steps:
-
       - name: Log in
         uses: appleboy/ssh-action@v0.1.7
         with:
