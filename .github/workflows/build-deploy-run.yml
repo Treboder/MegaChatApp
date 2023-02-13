@@ -1,4 +1,4 @@
-name: Build and deploy to server
+name: Build, deploy and run
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build_and_deploy:
+  build_and_push:
     runs-on: ubuntu-latest
     name: Build and deploy to server
     steps:
@@ -44,7 +44,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
       
-  server_login:
+  deploy_and_run:
     runs-on: ubuntu-latest
     steps:
       - name: Git clone the repository
@@ -70,7 +70,7 @@ jobs:
       - name: Pull image and run the container
         run: |
           ssh ec2 'ls -l'
-          ssh ec2 'docker pull'
+          ssh ec2 'docker pull treboder/megachatapp:master
           ssh ec2 'docker stop megachatapp'
           ssh ec2 'docker rm megachattapp'
           ssh ec2 'docker run --detach --name megachatapp -p 8080:8080 treboder/megachatapp:master'
