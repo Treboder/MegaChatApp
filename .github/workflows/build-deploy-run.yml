@@ -70,7 +70,7 @@ jobs:
       - name: Pull image and run the container
         run: |
           ssh ec2 'ls -l'
-          ssh ec2 'docker pull treboder/megachatapp:master
+          ssh ec2 'docker pull treboder/megachatapp:master'
           ssh ec2 'docker stop megachatapp'
           ssh ec2 'docker rm megachattapp'
           ssh ec2 'docker run --detach --name megachatapp -p 8080:8080 treboder/megachatapp:master'
