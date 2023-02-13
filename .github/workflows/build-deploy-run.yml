@@ -77,8 +77,8 @@ jobs:
       - name: Stop and remove active container
         run: |
           ssh ec2 'sudo docker ps'
-#          ssh ec2 'sudo docker stop treboder/megachatapp'
-#          ssh ec2 'sudo docker rm treboder/megachattapp'
+#          ssh ec2 'sudo docker stop treboder/megachatapp:master'
+#          ssh ec2 'sudo docker rm treboder/megachattapp:master'
 
       - name: Pull image and run the container
         run: |
