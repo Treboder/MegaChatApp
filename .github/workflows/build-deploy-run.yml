@@ -71,7 +71,8 @@ jobs:
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PWD: ${{ secrets.DOCKER_PASSWORD }}
-        run: ssh ec2 'winpty docker login -u $DOCKER_USER -p $DOCKER_PWD'
+#        run: ssh ec2 'docker login -u $DOCKER_USER -p $DOCKER_PWD'
+        run: ssh ec2 'docker login'
 
       - name: Pull image and run the container
         run: |
@@ -80,4 +81,5 @@ jobs:
           ssh ec2 'docker stop megachatapp'
           ssh ec2 'docker rm megachattapp'
           ssh ec2 'docker run --detach --name megachatapp -p 8080:8080 treboder/megachatapp:master'
-           
+
+  dckr_pat_wzWjM-Dh6-ZsquU8p7tnlOn2TUs
