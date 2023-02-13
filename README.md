@@ -1,9 +1,9 @@
 [![Build Maven Project](https://github.com/Treboder/MegaChatApp/actions/workflows/maven-build.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/maven-build.yml)
-[![Build and push image to Docker Hub](https://github.com/Treboder/MegaChatApp/actions/workflows/build-push-dockerhub.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-push-dockerhub.yml)
-[![Build and push image to GitHub Container Registry](https://github.com/Treboder/MegaChatApp/actions/workflows/build-push-ghcr.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-push-ghcr.yml)
+[![Build and push to Docker Hub](https://github.com/Treboder/MegaChatApp/actions/workflows/build-push-dockerhub.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-push-dockerhub.yml)
+[![Build and push to GitHub Container Registry](https://github.com/Treboder/MegaChatApp/actions/workflows/build-push-ghcr.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-push-ghcr.yml)
 [![SSH into server via appleboy](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-appleboy.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-appleboy.yml)
 [![SSH into server directly](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-direct.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-direct.yml)
-[![Build, deploy and run](https://github.com/Treboder/MegaChatApp/actions/workflows/build-deploy-run.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-deploy-run.yml)
+[![Build, deploy and run the app](https://github.com/Treboder/MegaChatApp/actions/workflows/build-deploy-run.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-deploy-run.yml)
 
 # MegaChatApp
 
@@ -45,8 +45,8 @@ sudo systemctl status docker
 
 ## Docker Login from EC2 via Github Actions (with Github secrets)
 
-After preparing the EC2 and successfully connection to it, we usually face the error message 
-*"Cannot perform an interactive login from a non TTY device"* with login attempt from Github Actions via:
+Seems not to work (at least I do not know how) according to the error message 
+*"Cannot perform an interactive login from a non TTY device"* after trying to login via Github Actions with:
 ````
 docker login -u $DOCKER_USER -p $DOCKER_PWD
 ````
