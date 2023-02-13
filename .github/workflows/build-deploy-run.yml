@@ -77,8 +77,8 @@ jobs:
       - name: Stop and remove active container
         run: |
           ssh ec2 'sudo docker ps -a'
-#          ssh ec2 'sudo docker stop megachatapp'
-#          ssh ec2 'sudo docker rm megachattapp'
+          ssh ec2 'sudo docker stop megachatapp'
+          ssh ec2 'sudo docker rm megachattapp'
 
       - name: Pull image and run the container
         run: |
