@@ -44,12 +44,29 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
       
-      - name: Pull Docker image from host and run container
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.HOST_IP }}
-          username: ${{ secrets.HOST_USER }}
-          key: ${{ secrets.HOST_KEY }}
-          envs: GITHUB_SHA
-          script: whoami
+  server_login:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/github-actions-key
+          chmod 600 ~/.ssh/github-actions-key
+          cat >>~/.ssh/config <<END
+          Host ec2
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/github-actions-key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_HOST: ${{ secrets.HOST_IP }}
+          SSH_USER: ${{ secrets.HOST_USER }}
+          SSH_KEY: ${{ secrets.HOST_KEY }}
+
+      - name: List home directory
+        run: ssh ec2 'ls -la'
            

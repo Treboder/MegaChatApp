@@ -1,7 +1,8 @@
 [![Build Maven Project](https://github.com/Treboder/MegaChatApp/actions/workflows/maven-build.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/maven-build.yml)
 [![Push image to Docker Hub](https://github.com/Treboder/MegaChatApp/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/docker-publish.yml)
 [![Push image to GitHub Container Registry](https://github.com/Treboder/MegaChatApp/actions/workflows/ghcr-publish.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/ghcr-publish.yml)
-[![SSH into server](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login.yml)
+[![SSH into server via appleboy](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-appleboy.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-appleboy.yml)
+[![SSH into server directly](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-direct.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-direct.yml)
 [![Build and deploy to server](https://github.com/Treboder/MegaChatApp/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-and-deploy.yml)
 
 # MegaChatApp
@@ -23,3 +24,9 @@ The project features:
 * [Thymeleaf](https://www.thymeleaf.org/) for html integration 
 * Web Frontend Testing with [Selenium](https://www.selenium.dev/)
 * Containerization via Docker with latest image published to [Docker Hub](https://hub.docker.com/repository/docker/treboder/megachatapp) and [Github Registry](https://github.com/Treboder/MegaChatApp/pkgs/container/megachatapp)
+
+## Deployment Notes
+
+* We use AWS EC2 with Ubuntu, but experienced following connection problem with Amazon Linux:
+````ssh: handshake failed: ssh: unable to authenticate, attempted methods [none publickey], no supported methods remain````
+
