@@ -44,11 +44,11 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
       
-  deploy_and_run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Git clone the repository
-        uses: actions/checkout@v3
+#  deploy_and_run:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Git clone the repository
+#        uses: actions/checkout@v3
 
       - name: Configure SSH
         run: |
