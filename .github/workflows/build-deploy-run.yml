@@ -3,7 +3,7 @@ name: Build, deploy and run
 on:
   workflow_dispatch:
   push:
-    branches: [ "ft-server" ]
+    branches: [ "master" ]
 
 jobs:
   build_deploy_run:
@@ -78,8 +78,6 @@ jobs:
           ssh ec2 'sudo docker rm megachatapp'
 
       - name: Pull image and run the container
-        env:
-          TAG: ${{ steps.meta.outputs.tags }}
         run: |
-          ssh ec2 'sudo docker pull treboder/megachatapp:$TAG'
-          ssh ec2 'sudo docker run --detach --name megachatapp -p 8080:8080 treboder/megachatapp:ft-server'
+          ssh ec2 'sudo docker pull treboder/megachatapp:master'
+          ssh ec2 'sudo docker run --detach --name megachatapp -p 8080:8080 treboder/megachatapp:master'
