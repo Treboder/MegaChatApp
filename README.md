@@ -43,6 +43,12 @@ sudo apt install docker-ce
 sudo systemctl status docker
 ````
 
+````
+touch docker.pwd
+vi docker.pwd
+cat docker.pwd | sudo docker login --username foo --password-stdin
+````
+
 ## References
 
 * [ci-cd-hands-on-github-actions-docker-hub-aws-ec2](https://medium.com/ryanjang-devnotes/ci-cd-hands-on-github-actions-docker-hub-aws-ec2-ba09f80297e1)
