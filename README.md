@@ -25,7 +25,7 @@ The project features:
 * Web Frontend Testing with [Selenium](https://www.selenium.dev/)
 * Containerization via Docker with latest image published to [Docker Hub](https://hub.docker.com/repository/docker/treboder/megachatapp) and [Github Registry](https://github.com/Treboder/MegaChatApp/pkgs/container/megachatapp)
 
-## Deployment Notes
+## EC2 Setup
 
 We use AWS EC2 with Ubuntu, but experienced following connection problem with Amazon Linux:
 
@@ -43,12 +43,23 @@ sudo apt install docker-ce
 sudo systemctl status docker
 ````
 
+## Docker Login from EC2 via Github Actions
+
+After preparing the EC2 and successfully connection to it, we usually face the error message 
+*"Cannot perform an interactive login from a non TTY device"* with login attempt from Github Actions via:
 ````
-touch docker.pwd
-vi docker.pwd
+docker login -u $DOCKER_USER -p $DOCKER_PWD
+````
+
+## Docker Login from EC2 directly
+
+For validation, it's a good idea check server settings and Docker credentials with *Docker Login* from within EC2 after SSH into it.
+We create the file *docker.pwd* with the docker hub key in the home directory and run:
+````
 cat docker.pwd | sudo docker login --username foo --password-stdin
 ````
 
-## References
+
+# References
 
 * [ci-cd-hands-on-github-actions-docker-hub-aws-ec2](https://medium.com/ryanjang-devnotes/ci-cd-hands-on-github-actions-docker-hub-aws-ec2-ba09f80297e1)
