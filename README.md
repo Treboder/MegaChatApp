@@ -43,7 +43,7 @@ sudo apt install docker-ce
 sudo systemctl status docker
 ````
 
-## Docker Login from EC2 via Github Actions
+## Docker Login from EC2 via Github Actions (with Github secrets)
 
 After preparing the EC2 and successfully connection to it, we usually face the error message 
 *"Cannot perform an interactive login from a non TTY device"* with login attempt from Github Actions via:
@@ -51,12 +51,13 @@ After preparing the EC2 and successfully connection to it, we usually face the e
 docker login -u $DOCKER_USER -p $DOCKER_PWD
 ````
 
-## Docker Login from EC2 directly
+## Docker Login from EC2 via Github Actions (without Github secrets)
 
-For validation, it's a good idea check server settings and Docker credentials with *Docker Login* from within EC2 after SSH into it.
-We create the file *docker.pwd* with the docker hub key in the home directory and run:
+In order to avoid the above mentioned docker login issue, we do not use Github secrets.
+We rather pass the docker hub key from a file via stdin to the login command.
+To do so, just create the file *docker.pwd* with the docker hub key in the home directory and run:
 ````
-cat docker.pwd | sudo docker login --username foo --password-stdin
+cat docker.pwd | sudo docker login --username treboder --password-stdin
 ````
 
 
