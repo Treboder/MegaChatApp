@@ -61,11 +61,14 @@ jobs:
           SSH_USER: ${{ secrets.HOST_USER }}
           SSH_KEY: ${{ secrets.HOST_KEY }}
 
-      - name: Docker login
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PWD: ${{ secrets.DOCKER_PASSWORD }}
-        #run: ssh ec2 'docker login -u $DOCKER_USER -p $DOCKER_PWD'
+      # docker login with secrets seems not to work
+#      - name: Docker login with Github secret
+#        env:
+#          DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
+#          DOCKER_PWD: ${{ secrets.DOCKER_PASSWORD }}
+#        run: ssh ec2 'docker login -u $DOCKER_USER -p $DOCKER_PWD'
+
+      - name: Docker login with local password file
         run: ssh ec2 'cat docker.pwd | sudo docker login -u treboder --password-stdin'
 
       - name: Stop and remove active container
