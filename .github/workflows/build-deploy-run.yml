@@ -6,9 +6,9 @@ on:
     branches: [ "ft-server" ]
 
 jobs:
-  build_and_push:
+  build_deploy_run:
     runs-on: ubuntu-latest
-    name: Build and deploy to server
+    name: Build, deploy and run
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -43,12 +43,6 @@ jobs:
           file: ./dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-      
-  deploy_and_run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Git clone the repository
-        uses: actions/checkout@v3
 
       - name: Configure SSH
         run: |
@@ -82,9 +76,9 @@ jobs:
 
       - name: Pull image and run the container
         env:
-          TAG: ft-server
+          TAG: ${{ steps.meta.outputs.tags }}
         run: |
-          ssh ec2 'sudo docker pull treboder/megachatapp:$ft-server'
-          ssh ec2 'sudo docker run --detach --name megachatapp -p 8080:8080 treboder/megachatapp:ft-server'
+          ssh ec2 'sudo docker pull treboder/megachatapp:$TAG'
+          ssh ec2 'sudo docker run --detach --name megachatapp -p 8080:8080 treboder/megachatapp:$TAG'
 #          ssh ec2 'curl localhost:8080/login'
 
