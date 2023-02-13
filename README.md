@@ -1,9 +1,9 @@
 [![Build Maven Project](https://github.com/Treboder/MegaChatApp/actions/workflows/maven-build.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/maven-build.yml)
-[![Push image to Docker Hub](https://github.com/Treboder/MegaChatApp/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/docker-publish.yml)
+[![Build and push image to Docker Hub](https://github.com/Treboder/MegaChatApp/actions/workflows/build-push-dockerhub.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-push-dockerhub.yml)
 [![Push image to GitHub Container Registry](https://github.com/Treboder/MegaChatApp/actions/workflows/ghcr-publish.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/ghcr-publish.yml)
 [![SSH into server via appleboy](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-appleboy.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-appleboy.yml)
 [![SSH into server directly](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-direct.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/server-login-direct.yml)
-[![Build and deploy to server](https://github.com/Treboder/MegaChatApp/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-and-deploy.yml)
+[![Build, deploy and run](https://github.com/Treboder/MegaChatApp/actions/workflows/build-deploy-run.yml/badge.svg)](https://github.com/Treboder/MegaChatApp/actions/workflows/build-deploy-run.yml)
 
 # MegaChatApp
 
